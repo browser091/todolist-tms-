@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import ToDoHeader from "./components/ToDoHeader";
+import ToDoSearch from "./components/ToDoSearch";
+import ToDoList from "./components/ToDoList";
+import ToDoFilter from "./components/ToDoFilter";
 
 function App() {
+  const todoData = [
+    { label: "drink coffee", important: false, id: 1 },
+    { label: "bla bla 2", important: true, id: 2 },
+    { label: "bla bla 3", important: false, id: 3 },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo-app">
+      <ToDoHeader toDo={1} done={3} />
+      <ToDoSearch />
+      <ToDoList todos={todoData} />
+      <ToDoFilter />
     </div>
   );
 }
