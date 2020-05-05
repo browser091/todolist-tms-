@@ -8,11 +8,12 @@ class ToDoLisitem extends Component {
       done: false,
     };
   }
-  onLableClick = () => {
-    this.setState({ done: !this.state.done });
+
+  onLableClick = (e) => {
+    this.setState({ done: !this.state.done })
   };
   render() {
-    const { label } = this.props;
+    const { label, onDeleted } = this.props;
     const { done } = this.state;
     let classNames = "todo-list-item";
     if (done) {
@@ -31,7 +32,7 @@ class ToDoLisitem extends Component {
         <span className="todo-list-item-label ">{label}</span>
         <button
           type="button"
-          className="btn btn-outline-danger btn-sm float-right"
+          className="btn btn-outline-danger btn-sm float-right" onClick={onDeleted}
         >
           <i className="fa fa-trash-o" />
         </button>
