@@ -1,0 +1,10 @@
+.todo-header {
+  align-items: flex-end;
+}
+.todo-header h1 {
+  text-align: center;
+}
+.todo-header h2 {
+  font-size: 15px;
+  color: grey;
+}
