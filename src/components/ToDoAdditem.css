@@ -1,0 +1,8 @@
+.todo-add-item {
+  display: flex;
+}
+.btn-add {
+  margin: 10px;
+  height: 40px;
+  align-self: center;
+}

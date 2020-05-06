@@ -3,14 +3,17 @@ import "./ToDoList.css";
 import ToDoLisitem from "./ToDoListitem";
 
 class ToDoList extends Component {
-
   render() {
-    const { todos, onDeleted } = this.props;
+    const { todos, onDeleted, onToggleDone } = this.props;
     const elements = todos.map((item) => {
       const { id, ...itemProps } = item;
       return (
         <li key={id} className="list-group-item todo-list">
-          <ToDoLisitem {...itemProps} onDeleted={() => onDeleted(id)} />
+          <ToDoLisitem
+            {...itemProps}
+            onDeleted={() => onDeleted(id)}
+            onToggleDone={() => onToggleDone(id)}
+          />
         </li>
       );
     });
